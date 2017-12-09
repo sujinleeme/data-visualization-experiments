@@ -1,0 +1,57 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'DDINRegular', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #4F4F4F;
+    background: #F7F7F9;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+svg {
+    display: block;
+    margin: auto;
+}
+
+.node {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.record {
+    cursor: pointer
+}
+
+
+p {
+    text-align:center;
+    vertical-align: middle;
+    display: table-cell;
+}
+
+svg, text {
+    text-rendering: optimizeLegibility;
+}
+
+#path {
+    stroke-dasharray: 628.3185307179587;
+    animation: dash 5s linear forwards;
+}
+
+@keyframes dash {
+    from {
+        stroke-dashoffset: 628.3185307179587;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
