@@ -1,13 +1,11 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import StravaCalendarHeatMap from '../charts/StravaCalendarHeatMap/StravaCalendarHeatMap'
 import BodyHeader from '../assests/BodyHeader'
 import BodyFooter from '../assests/BodyFooter'
 import ChartInfo from '../assests/ChartInfo'
-import {Posts} from '../../Posts'
+import Posts from '../../Posts'
 import Grid from 'material-ui/Grid'
 
-const Work5 = () => {
+export default () => {
 	const post = Posts[4]
 	return (
 		<div>
@@ -28,12 +26,4 @@ const Work5 = () => {
 		</div>
 	)
 }
-
-Work5.propTypes = {
-}
-
-export default Work5
-
-
-
 

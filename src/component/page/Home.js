@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {withStyles} from 'material-ui/styles'
 import Grid from 'material-ui/Grid'
-import {Posts} from '../../Posts'
+import Posts from '../../Posts'
 
 import BodyFooter from '../assests/BodyFooter'
 import IntroCanvas from '../assests/IntroCanvas'

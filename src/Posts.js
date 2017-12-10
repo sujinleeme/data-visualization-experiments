@@ -1,4 +1,4 @@
-export const Posts = [
+export default [
 	{
 		title: 'OECD Social Expenditure (2013-2016)',
 		postURL: '01',
@@ -38,6 +38,5 @@ export const Posts = [
 		source: 'strava api',
 		sourceURL: 'https://strava.github.io/api/',
 		githubURL: 'https://github.com/sujinleeme'
-	},
-	
+	}
 ]

@@ -23,7 +23,7 @@ class StravaCalendarHeatMap extends React.Component {
 	render() {
 		const canvas = {
 			className: 'canvas',
-			width: 1400,
+			width: 1200,
 			height: 600,
 		}
 		
@@ -32,12 +32,10 @@ class StravaCalendarHeatMap extends React.Component {
 				<ChartCanvas
 					data={this.state.data}
 					canvas={canvas}
-				
 				/>
 			</div>
 		)
 	}
 }
-
 
 export default StravaCalendarHeatMap

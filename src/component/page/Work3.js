@@ -1,14 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import SpotifyRelatedArtist from '../charts/SpotifyRelatedArtist/SpotifyRelatedArtist'
 import BodyHeader from '../assests/BodyHeader'
 import ChartInfo from '../assests/ChartInfo'
 import BodyFooter from '../assests/BodyFooter'
-import {Posts} from '../../Posts'
+import Posts from '../../Posts'
 
 import Grid from 'material-ui/Grid'
 
-const Work3 = () => {
+export default () => {
 	const post = Posts[2]
 	
 	return (
@@ -31,8 +30,3 @@ const Work3 = () => {
     </div>
   )
 }
-
-Work3.propTypes = {
-}
-
-export default Work3

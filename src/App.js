@@ -5,10 +5,11 @@ import Work2 from './component/page/Work2'
 import Work3 from './component/page/Work3'
 import Work4 from './component/page/Work4'
 import Work5 from './component/page/Work5'
-import {Switch, Route} from 'react-router-dom'
+import Posts from './Posts'
+import {Switch, Route, Link} from 'react-router-dom'
 import './App.css'
 
-const Main = () => (
+const App = () => (
 	<main>
 		<Switch>
 			<Route exact path='/' component={Home}/>
@@ -17,17 +18,10 @@ const Main = () => (
 			<Route path='/03' component={Work3}/>
 			<Route path='/04' component={Work4}/>
 			<Route path='/05' component={Work5}/>
-		
-		
 		</Switch>
 	</main>
 )
 
 
-const App = () => (
-	<div>
-		<Main/>
-	</div>
-)
 
 export default App;

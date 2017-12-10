@@ -1,14 +1,13 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import SocialExpenditureGraph from '../charts/SocialExpenditureGraph/SocialExpenditureGraph'
 import BodyHeader from '../assests/BodyHeader'
 import BodyFooter from '../assests/BodyFooter'
 import ChartInfo from '../assests/ChartInfo'
-import {Posts} from '../../Posts'
+import Posts from '../../Posts'
 import Grid from 'material-ui/Grid'
 
 
-const Work1 = () => {
+export default () => {
   const post = Posts[0]
   return (
     <div>
@@ -32,8 +31,3 @@ const Work1 = () => {
     </div>
   )
 }
-
-Work1.propTypes = {
-}
-
-export default Work1

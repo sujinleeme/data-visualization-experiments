@@ -147,7 +147,6 @@ export default class ChartCanvas extends React.Component {
 			</svg>
 		))
 		
-		
 		return (
 			<svg {...props.canvas}>
 				<text style={style.title} x={chart.x/3} y={120}>2017</text>
