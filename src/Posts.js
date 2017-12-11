@@ -32,9 +32,9 @@ export default [
 		githubURL: 'https://github.com/sujinleeme'
 	},
 	{
-		title: '2017 My Running Calendar',
+		title: 'Convenience Store Geography',
 		postURL: '05',
-		chartType: 'heat map',
+		chartType: 'geography map',
 		source: 'strava api',
 		sourceURL: 'https://strava.github.io/api/',
 		githubURL: 'https://github.com/sujinleeme'

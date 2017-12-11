@@ -31,9 +31,8 @@ svg {
     cursor: pointer
 }
 
-
 p {
-    text-align:center;
+    text-align: center;
     vertical-align: middle;
     display: table-cell;
 }
@@ -55,3 +54,6 @@ svg, text {
         stroke-dashoffset: 0;
     }
 }
+
+
+

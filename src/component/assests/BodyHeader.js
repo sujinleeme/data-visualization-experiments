@@ -15,16 +15,10 @@ const styles = theme => ({
 		paddingBottom: theme.spacing.unit * 6,
 	},
 	
-	icon: {
-		margin: '0 auto',
-		display: 'block',
-		height: '100%',
-	},
-	
 	sitename: {
 		fontFamily: 'DDINRegular',
 		color: "#182026",
-		fontSize: '14px',
+		fontSize: '13px',
 		fontWeight: 'bold',
 		textTransform: 'uppercase',
 		letterSpacing: '2px',
@@ -39,22 +33,10 @@ const styles = theme => ({
 		fontFamily: 'DDINRegular',
 		color: "#182026",
 		fontWeight: 'bold',
-		fontSize: '26px',
+		fontSize: '21px',
 		textTransform: 'uppercase',
 		letterSpacing: '3px',
 		margin: '3px 0 3px 0'
-	},
-	
-		subtitle: {
-		fontFamily: 'DDINRegular',
-		color: "#182026",
-		fontSize: '15px',
-		fontWeight: 'bold',
-		textTransform: 'uppercase',
-		letterSpacing: '2px',
-		display: 'block',
-		textAlign: 'left',
-		opacity: 0.5
 	}
 })
 

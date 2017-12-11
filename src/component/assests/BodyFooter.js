@@ -22,7 +22,7 @@ const styles = theme => ({
 	},
 	sitename: {
 		fontFamily: 'DDINRegular',
-		fontSize: '12px',
+		fontSize: '10px',
 		fontWeight: 'bold',
 		textTransform: 'uppercase',
 		letterSpacing: '2px',
@@ -32,14 +32,14 @@ const styles = theme => ({
 	},
 	socials: {
 		fontFamily: 'DDINRegular',
-		fontSize: '12px',
+		fontSize: '10px',
 		fontWeight: 'bold',
 		textTransform: 'uppercase',
 		letterSpacing: '2px',
 		display: 'block',
 		opacity: 0.3,
 		textAlign: 'center'
-	}
+	},
 })
 
 const BodyFooter = (props) => {

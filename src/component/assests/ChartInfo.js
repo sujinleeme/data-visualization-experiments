@@ -20,7 +20,7 @@ const styles = theme => ({
 		
 		info: {
 			color: "#182026",
-			fontSize: '13px',
+			fontSize: '11px',
 			fontWeight: 'bold',
 			textTransform: 'uppercase',
 			letterSpacing: '2px',

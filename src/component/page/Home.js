@@ -29,16 +29,16 @@ const styles = theme => ({
 		opacity: '0.8',
 		textTransform: 'uppercase',
 		letterSpacing: '3px',
-		fontSize: '15px',
+		fontSize: '13px',
 		fontWeight: 'bold',
-		marginBottom: theme.spacing.unit
+		marginBottom: theme.spacing.unit / 2
 	},
 	subheading: {
 		color: '#fff',
 		opacity: '0.3',
 		textTransform: 'uppercase',
 		letterSpacing: '3px',
-		fontSize: '13px',
+		fontSize: '11px',
 		fontWeight: 'bold',
 	},
 	
@@ -47,7 +47,7 @@ const styles = theme => ({
 		fontFamily: 'DDINRegular',
 		color: "#fff",
 		fontWeight: 'bold',
-		fontSize: '26px',
+		fontSize: '21px',
 		textTransform: 'uppercase',
 		letterSpacing: '4px',
 		margin: '3px 0 3px 0'
@@ -56,7 +56,7 @@ const styles = theme => ({
 	subtitle: {
 		fontFamily: 'DDINRegular',
 		color: "#fff",
-		fontSize: '17px',
+		fontSize: '13px',
 		fontWeight: 'bold',
 		textTransform: 'uppercase',
 		letterSpacing: '2px',
@@ -67,7 +67,7 @@ const styles = theme => ({
 	copyright: {
 		fontFamily: 'DDINRegular',
 		color: "#fff",
-		fontSize: '15px',
+		fontSize: '10px',
 		fontWeight: 'bold',
 		textTransform: 'uppercase',
 		letterSpacing: '2px',

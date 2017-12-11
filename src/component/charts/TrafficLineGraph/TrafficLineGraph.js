@@ -3,14 +3,14 @@ import { withStyles } from 'material-ui/styles'
 import { DataSet } from '../../../data/traffic/data'
 
 import {
-  LineChart, CartesianGrid, Line, Legend, XAxis, YAxis, Cell, Tooltip, ResponsiveContainer,
+  LineChart, CartesianGrid, Line, Legend, XAxis, YAxis, Tooltip, ResponsiveContainer,
 } from 'recharts'
 
-const colors = ['#FB497C', '#beaaff', 'lightblue']
 const styles = theme => ({
-  root: {
-    top: '20px',
-  },
+	chart: {
+		marginTop: theme.spacing.unit * 8,
+		marginBottom: theme.spacing.unit * 10
+	},
   hide: {
     display: 'none',
   },
@@ -45,21 +45,22 @@ class TrafficLineGraph extends React.Component {
   }
   
   render () {
-    const {initData} = this.state
+	  const {classes} = this.props
+	  const {initData} = this.state
     return (
       <div>
-        <ResponsiveContainer width="100%" height={400}>
+        <ResponsiveContainer width="100%" height={400} className={classes.chart}>
   
-        <LineChart data={initData}
+        <LineChart  data={initData}
                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <XAxis dataKey="year" tick={{fontSize: '11px', padding: '12px'}}/>
           <YAxis type="number" domain={['dataMin+10000', 'auto']} tick={{fontSize: '11px', padding: '12px'}}/>
           <CartesianGrid strokeDasharray="3 3" />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="casualties" stroke="#82ca9d" />
-          <Line type="monotone" dataKey="accidents" stroke="#8884d8" />
-          <Line type="monotone" dataKey="fatalities" stroke="red" />
+          <Line type="monotone" dataKey="casualties" stroke="#00baff" />
+          <Line type="monotone" dataKey="accidents" stroke="#FF00BA" />
+          <Line type="monotone" dataKey="fatalities" stroke="#c500ff" />
         </LineChart>
         </ResponsiveContainer>
       </div>

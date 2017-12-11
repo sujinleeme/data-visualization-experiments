@@ -8,6 +8,7 @@ import Work5 from './component/page/Work5'
 import Posts from './Posts'
 import {Switch, Route, Link} from 'react-router-dom'
 import './App.css'
+import 'normalize.css'
 
 const App = () => (
 	<main>
