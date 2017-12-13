@@ -4,7 +4,7 @@ import BodyFooter from '../assests/BodyFooter'
 import ChartInfo from '../assests/ChartInfo'
 import Posts from '../../Posts'
 import Grid from 'material-ui/Grid'
-import ConvenienceStorePlaceGeography from '../charts/ConvenienceStorePlaceGeography/ConvenienceStorePlaceGeography'
+import ConvenienceStorePlaceGeography from '../charts/SchoolPlaceGeography/SchoolPlaceGeography'
 
 export default () => {
 	const post = Posts[4]

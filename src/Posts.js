@@ -32,9 +32,9 @@ export default [
 		githubURL: 'https://github.com/sujinleeme'
 	},
 	{
-		title: 'City Park Geography',
+		title: 'Elementary and secondary School Place in Korea',
 		postURL: '05',
-		chartType: 'map',
+		chartType: 'Geography',
 		source: 'data.go.kr',
 		sourceURL: 'https://www.data.go.kr/dataset/15012890/standard.do?lang=en',
 		githubURL: 'https://github.com/sujinleeme'
