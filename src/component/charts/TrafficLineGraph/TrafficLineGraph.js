@@ -1,10 +1,8 @@
 import React from 'react'
 import { withStyles } from 'material-ui/styles'
-import { DataSet } from '../../../data/traffic/data'
+import DataSet from './DataSet'
 
-import {
-  LineChart, CartesianGrid, Line, Legend, XAxis, YAxis, Tooltip, ResponsiveContainer,
-} from 'recharts'
+import { LineChart, CartesianGrid, Line, Legend, XAxis, YAxis, Tooltip, ResponsiveContainer} from 'recharts'
 
 const styles = theme => ({
 	chart: {
@@ -27,31 +25,29 @@ const styles = theme => ({
   },
   axis: {
     fontSize: '10px !important',
-  },
+  }
 })
 
 class TrafficLineGraph extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      initData: []
+	    DataSet: []
     }
-    
-
   }
   
   componentDidMount () {
-    this.setState({initData: DataSet})
+    this.setState({DataSet})
   }
   
   render () {
 	  const {classes} = this.props
-	  const {initData} = this.state
+	  const {DataSet} = this.state
     return (
       <div>
         <ResponsiveContainer width="100%" height={400} className={classes.chart}>
   
-        <LineChart  data={initData}
+        <LineChart data={DataSet}
                    margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
           <XAxis dataKey="year" tick={{fontSize: '11px', padding: '12px'}}/>
           <YAxis type="number" domain={['dataMin+10000', 'auto']} tick={{fontSize: '11px', padding: '12px'}}/>
@@ -65,7 +61,6 @@ class TrafficLineGraph extends React.Component {
         </ResponsiveContainer>
       </div>
     )
-    
   }
 }
 

@@ -91,7 +91,6 @@ export default class ChartCanvas extends React.Component {
 				height: chart.height / 7
 			}
 		
-		
 		chart.colorScale = d3.scaleQuantile().domain([variance.min, variance.max]).range(global.colors)
 		
 		const circles = Utils.generateNumberArr(1, totalDays + 1).map(d => {
@@ -125,7 +124,6 @@ export default class ChartCanvas extends React.Component {
 					x={(chart.width-chartMargin.marginRight) + (i*item.width)}
 				  y={60}/>
 			</g>
-
 		))
 		
 		const yAxis = global.calendarStr.weekDays.map((day, i) => (
@@ -159,10 +157,4 @@ export default class ChartCanvas extends React.Component {
 		)
 	}
 }
-
-
-ChartCanvas.propTypes = {
-	// classes: PropTypes.object.isRequired,
-}
-
 

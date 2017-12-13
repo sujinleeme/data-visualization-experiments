@@ -4,7 +4,6 @@ import PropTypes from 'prop-types'
 import {withStyles} from 'material-ui/styles'
 import Grid from 'material-ui/Grid'
 import Posts from '../../Posts'
-
 import BodyFooter from '../assests/BodyFooter'
 import IntroCanvas from '../assests/IntroCanvas'
 
@@ -119,13 +118,9 @@ const Home = (props) => {
 							</div>
 							{postList}
 						</div>
-					
 					</Grid>
 					<Grid item md={1}/>
-				
 				</Grid>
-				
-			
 			</Grid>
 			<BodyFooter
 				theme="dark"

@@ -1,23 +1,22 @@
 import React from 'react'
-import * as d3 from "d3";
+import * as d3 from "d3"
 
 class Label extends React.Component {
 	constructor(props) {
-		super(props);
+		super(props)
 		this.state = {
 			hover: false
-		};
+		}
 	}
 	
 	triggerSuccess() {
 		this.setState({
 			hover: !this.state.hover
 		})
-		console.log(this.state.hover)
 	}
 	
 	componentDidMount() {
-		d3.select(this.ref).data([this.props.node]);
+		d3.select(this.ref).data([this.props.node])
 	}
 	
 	render() {
@@ -25,12 +24,12 @@ class Label extends React.Component {
 			<a xlinkHref={this.props.node.url} target="_blank">
 				<text className="label"
 				      fontSize={!this.state.hover ?
-					      "13px" : "24px"
+					      "11px" : "24px"
 				      }
 				      fontWeight={!this.state.hover ?
 					      "normal" : "bolder"
 				      }
-				      ref={(ref: SVGTextElement) => this.ref = ref}
+				      ref={(ref) => this.ref = ref}
 				      onMouseOver={this.triggerSuccess.bind(this)}
 				      onMouseLeave={this.triggerSuccess.bind(this)}
 				>

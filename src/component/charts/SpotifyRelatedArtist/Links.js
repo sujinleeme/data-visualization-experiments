@@ -24,8 +24,7 @@ class Link extends React.Component {
 	
 	render() {
 		return (
-			<line className="link" strokeWidth="0.5px" stroke="#dadada" ref={(ref: SVGLineElement) => this.ref = ref}
-			/>
+			<line className="link" strokeWidth="0.5px" stroke="#dadada" ref={(ref) => this.ref = ref}/>
 		)
 	}
 }

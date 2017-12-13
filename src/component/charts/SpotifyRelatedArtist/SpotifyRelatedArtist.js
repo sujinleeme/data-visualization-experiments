@@ -1,8 +1,7 @@
-import React from 'react'
-import * as d3 from 'd3';
+import React, { Component } from 'react'
+import * as d3 from 'd3'
 import ChartCanvas from './ChartCanvas'
-import Typography from 'material-ui/Typography';
-import { withStyles } from 'material-ui/styles';
+import { withStyles } from 'material-ui/styles'
 
 const styles = theme => ({
 	info: {
@@ -21,14 +20,16 @@ const styles = theme => ({
 	}
 });
 
-class SpotifyRelatedArtist extends React.Component {
+class SpotifyRelatedArtist extends Component {
 	constructor() {
 		super()
 		this.state = {
 			nodes: [],
-			links: []
+			links: [],
 		}
+		
 	}
+	
 	
 	componentWillMount() {
 		d3.queue()
@@ -38,7 +39,7 @@ class SpotifyRelatedArtist extends React.Component {
 				this.setState({
 					nodes,
 					links
-				});
+				})
 			})
 	}
 	
@@ -56,16 +57,18 @@ class SpotifyRelatedArtist extends React.Component {
 							<h1 className={classes.title}>
 								Artists's Connections &middot; {links.length} </h1>
 						</div>
+						
 						<ChartCanvas
-							width={1280} height={1600} nodes={nodes} links={links}
-							linkDistance={30}
-							forceStrength={-250}/>
+							width={1200} height={1500} nodes={nodes} links={links}
+							zoomType="scale"
+						/>
 					</div>
 					: null}
 			</div>
 		)
 	}
 }
+
 
 
 export default withStyles(styles)(SpotifyRelatedArtist)

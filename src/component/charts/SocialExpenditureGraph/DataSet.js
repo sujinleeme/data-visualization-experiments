@@ -2,7 +2,7 @@
  * Source from : https://stats.oecd.org/Index.aspx?DataSetCode=SOCX_AGG
 */
 
-export const DataSet =[
+export default [
   {
     "id": 1,
     "country": "Australia",

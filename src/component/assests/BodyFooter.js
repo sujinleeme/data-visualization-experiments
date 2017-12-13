@@ -42,8 +42,7 @@ const styles = theme => ({
 	},
 })
 
-const BodyFooter = (props) => {
-	const {classes, theme} = props
+const BodyFooter = ({classes, theme}) => {
 	const socials = {
 		'website /': 'https://www.sujinlee.me',
 		' github /': 'https://github.com/sujinleeme',

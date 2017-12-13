@@ -1,12 +1,11 @@
-import React, {Component} from 'react'
+import React from 'react'
 import Home from './component/page/Home'
 import Work1 from './component/page/Work1'
 import Work2 from './component/page/Work2'
 import Work3 from './component/page/Work3'
 import Work4 from './component/page/Work4'
 import Work5 from './component/page/Work5'
-import Posts from './Posts'
-import {Switch, Route, Link} from 'react-router-dom'
+import {Switch, Route} from 'react-router-dom'
 import './App.css'
 import 'normalize.css'
 
@@ -24,5 +23,4 @@ const App = () => (
 )
 
 
-
-export default App;
+export default App

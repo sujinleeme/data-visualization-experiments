@@ -3,15 +3,12 @@ import * as d3 from 'd3'
 import Nodes from './Nodes'
 import Links from './Links'
 import Labels from './Labels'
+import Legend from './Legend'
 
 
 export default class ChartCanvas extends React.Component {
 	constructor(props) {
 		super(props)
-		
-		this.state = {
-			// zoomTransform: null
-		}
 		
 		this.simulation = d3.forceSimulation()
 			.nodes(this.props.nodes)
@@ -39,13 +36,13 @@ export default class ChartCanvas extends React.Component {
 				.attr("x2", (d) => d.target.x)
 				.attr("y2", (d) => d.target.y)
 			node
-				.attr("cx", (d) => d.x )
+				.attr("cx", (d) => d.x)
 				.attr("cy", (d) => d.y)
 			label
 				.attr("x", (d) => d.x + 5)
 				.attr("y", (d) => d.y + 5)
 			tooltip
-				.attr("x", (d) =>  d.x + 5)
+				.attr("x", (d) => d.x + 5)
 				.attr("y", (d) => d.y + 50)
 		}
 	}
@@ -60,11 +57,17 @@ export default class ChartCanvas extends React.Component {
 	
 	render() {
 		const {width, height, links, nodes} = this.props
+		const colorsPalette = ["#FFF714", "#FFDE24", "#FFC535", "#FFAC45", "#FF9456", "#FF7B67", "#FF6277", "#FF4A88", "#FF3198", "#FF00BA"]
+		
 		return (
 			<svg className="container" width={width} height={height}>
-				<Links links={links}/>
-				<Nodes nodes={nodes} simulation={this.simulation}/>
-				<Labels nodes={nodes}/>
+				<g className="chart">
+					<Links links={links}/>
+					<Nodes nodes={nodes} simulation={this.simulation}
+					       colors={colorsPalette}/>
+					<Labels nodes={nodes}/>
+					<Legend colors={colorsPalette}/>
+				</g>
 			</svg>
 		)
 	}

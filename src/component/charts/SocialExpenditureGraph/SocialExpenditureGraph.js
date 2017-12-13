@@ -1,9 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React, { Component } from 'react'
 import {withStyles} from 'material-ui/styles'
-import {DataSet} from '../../../data/oced/data'
+import DataSet from './DataSet'
 import {palette} from '../../../style/Palette'
-import SortSelection from '../../assests/SortSelection'
+import SortSelection from './SortSelection'
 
 import {
 	BarChart, ReferenceLine, Bar, XAxis, YAxis, Cell, Tooltip,
@@ -35,7 +34,7 @@ const styles = theme => ({
 
 const yearList = ['2013', '2014', '2015', '2016']
 
-class SocialExpenditureGraph extends React.Component {
+class SocialExpenditureGraph extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {

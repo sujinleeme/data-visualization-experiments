@@ -8,7 +8,6 @@ import Posts from '../../Posts'
 
 
 export default () => {
-	console.log(Posts)
 	const post = Posts[1]
 	return (
     <div>

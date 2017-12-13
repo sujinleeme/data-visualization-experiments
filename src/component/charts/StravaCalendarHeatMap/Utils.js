@@ -1,9 +1,7 @@
 const keyList = ['day', 'month', 'date', 'year', 'time', 'GMT', 'local']
 export const getAllRecordsDates = (data) => {
 	return [...data.map((d) =>
-		Object.assign({},
-			
-			{
+		Object.assign({}, {
 				name: d.name,
 				distance: d.distance,
 				moving_time: d.moving_time,
@@ -14,21 +12,6 @@ export const getAllRecordsDates = (data) => {
 				{[keyList[index]]: item}
 			))))]
 }
-/*
-obj.map(e => ({id: e.target, name: e.name, image: e.image, url: e.url, group: e.group}))
-*/
-export const getAllRecords = (data) =>
-	[...data.map(e => (
-		{
-			
-			'distance': e.distance,
-			
-			
-		}
-	
-	
-	
-	))]
 
 export const getAllDistance = (data) =>
 	[...data.map(e => (
@@ -42,7 +25,6 @@ export const getDaysInMonth = (month, year) =>
 
 export const generateNumberArr = (start, end) => Array.from({length: (end - start)}, (v, k) => k + start)
 
-//2017/01
 export const daysIntoYear = (date) => {
 	//new Date(2016,0,1)
 	return (Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()) - Date.UTC(date.getFullYear(), 0, 0)) / 24 / 60 / 60 / 1000;
@@ -55,20 +37,17 @@ const isLeapYear = (year) => {
 	return year % 400 === 0 || (year % 100 !== 0 && year % 4 === 0);
 }
 
-
 export const meterToKilo = (meter) =>
 	Math.round(meter*0.1)/100
 
 
 export const secondsToHms = (d) => {
 	d = Number(d);
-	var h = Math.floor(d / 3600);
-	var m = Math.floor(d % 3600 / 60);
-	var s = Math.floor(d % 3600 % 60);
-	
+	const h = Math.floor(d / 3600);
+	const m = Math.floor(d % 3600 / 60);
+	const s = Math.floor(d % 3600 % 60);
 	return ('0' + h).slice(-2) + ":" + ('0' + m).slice(-2) + ":" + ('0' + s).slice(-2);
 }
-
 
 
 export const truncate = (str, limit) => (

@@ -1,8 +1,8 @@
-import React from 'react'
-import * as d3 from 'd3';
+import React, { Component } from 'react'
+import * as d3 from 'd3'
 import ChartCanvas from './ChartCanvas'
 
-class StravaCalendarHeatMap extends React.Component {
+class StravaCalendarHeatMap extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {

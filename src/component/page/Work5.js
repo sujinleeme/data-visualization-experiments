@@ -4,6 +4,7 @@ import BodyFooter from '../assests/BodyFooter'
 import ChartInfo from '../assests/ChartInfo'
 import Posts from '../../Posts'
 import Grid from 'material-ui/Grid'
+import ConvenienceStorePlaceGeography from '../charts/ConvenienceStorePlaceGeography/ConvenienceStorePlaceGeography'
 
 export default () => {
 	const post = Posts[4]
@@ -20,7 +21,8 @@ export default () => {
 			/>
 			<Grid container spacing={24}>
 				<Grid item md={12}>
-				</Grid>
+					<ConvenienceStorePlaceGeography />
+				</Grid>yar
 			</Grid>
 			<BodyFooter theme="light"/>
 		</div>

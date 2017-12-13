@@ -32,11 +32,11 @@ export default [
 		githubURL: 'https://github.com/sujinleeme'
 	},
 	{
-		title: 'Convenience Store Geography',
+		title: 'City Park Geography',
 		postURL: '05',
-		chartType: 'geography map',
-		source: 'strava api',
-		sourceURL: 'https://strava.github.io/api/',
+		chartType: 'map',
+		source: 'data.go.kr',
+		sourceURL: 'https://www.data.go.kr/dataset/15012890/standard.do?lang=en',
 		githubURL: 'https://github.com/sujinleeme'
 	}
 ]
