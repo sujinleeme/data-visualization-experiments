@@ -18,7 +18,7 @@ const styles = theme => ({
 		textAlign: 'center',
 		marginTop: '10px',
 	}
-});
+})
 
 class SpotifyRelatedArtist extends Component {
 	constructor() {

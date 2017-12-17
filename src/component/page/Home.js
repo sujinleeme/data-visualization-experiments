@@ -1,11 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import PropTypes from 'prop-types'
 import {withStyles} from 'material-ui/styles'
 import Grid from 'material-ui/Grid'
 import Posts from '../../Posts'
 import BodyFooter from '../assests/BodyFooter'
 import IntroCanvas from '../assests/IntroCanvas'
+import Helmet from 'react-helmet'
 
 const styles = theme => ({
 	page: {
@@ -104,11 +104,21 @@ const Home = (props) => {
 	
 	return (
 		<div className={classes.page}>
+			<Helmet
+				title="Data Visualization Experimental"
+				meta={[
+					{"name": "description", "content": "Code and Design by Sujin Lee (2017)"},
+					{property: "og:type", content: "article"},
+					{property: "og:title", content: "Data Visualization Experimental | Sujin Lee"},
+					{property: "og:image", content: "http://example.com/article.jpg"},
+					{property: "og:url", content: "http://example.com/example"}
+				]}
+			/>
 			<Grid className={classes.page}>
 				<Grid container className={classes.main} spacing={24}>
 					<Grid item md={1}/>
 					<Grid item xs={12} md={5}>
-						<IntroCanvas />
+						<IntroCanvas/>
 					</Grid>
 					<Grid item xs={12} md={5}>
 						<div className={classes.main}>

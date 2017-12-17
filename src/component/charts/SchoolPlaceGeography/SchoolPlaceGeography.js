@@ -1,11 +1,25 @@
 import React, {Component} from 'react'
 import * as d3 from 'd3'
-import {connect} from 'react-redux'
 import CountryMap from './CountryMap'
+import { withStyles } from 'material-ui/styles'
 import * as topojson from 'topojson'
 import _ from 'lodash'
 
-class ConvenienceStorePlaceGeography extends Component {
+const styles = theme => ({
+	title: {
+		color: "#182026",
+		fontSize: '13px',
+		textTransform: 'uppercase',
+		letterSpacing: '2px',
+		display: 'block',
+		opacity: 0.9,
+		textAlign: 'center',
+		marginTop: '10px',
+	}
+})
+
+
+class SchoolPlaceGeography extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -14,23 +28,21 @@ class ConvenienceStorePlaceGeography extends Component {
 				elementary: null,
 				middle: null,
 				high: null
-				
+			},
+			
+			checked: {
+				elementary: true,
+				middle: true,
+				high: true
 			}
 		}
 		
 		const width = 1000
 		const height = 600
-		//
-		// this.zoom = d3.zoom()
-		// 	.scaleExtent([-5, 5])
-		// 	.translateExtent([[-100, -100], [width+100, height+100]])
-		// 	.extent([[-100, -100], [width+100, height+100]])
-		// 	.on("zoom", this.zoomed.bind(this))
+		
 		
 		this.zoom = d3.zoom()
 			.scaleExtent([0, 3])
-			// .translateExtent([[0, 0], [props.width+100, props.height+100]])
-			// .extent([[-100, -100], [props.width+100, props.height+100]])
 			.on("zoom", this.zoomed.bind(this))
 	}
 	
@@ -42,13 +54,13 @@ class ConvenienceStorePlaceGeography extends Component {
 	}
 	
 	
-	
 	componentDidMount() {
 		fetch('https://sujinlee-infovisualization.firebaseio.com/records.json').then(res =>
 			res.json()).then(data => {
 			const elementary = _.filter(data, {'학교급구분': '초등학교'}),
 				middle = _.filter(data, {'학교급구분': '중학교'}),
 				high = _.filter(data, {'학교급구분': '고등학교'})
+			
 			return this.setState({
 				...this.state,
 				schools: {
@@ -81,31 +93,42 @@ class ConvenienceStorePlaceGeography extends Component {
 			})
 	}
 	
+	
+	handleChange = name => event => {
+		this.setState({checked: {...this.state.checked, [name]: event.target.checked}})
+	}
+	
 	render() {
-		const {mapData, zoomTransform, schools} = this.state
-		const canvas = {
-			className: 'canvas',
-			width: 1000,
-			height: 400,
-		}
+		const {mapData, zoomTransform, schools, checked} = this.state
+		const { classes } = this.props
 		
 		return (
 			<div>
 				{mapData ?
-					<CountryMap
-						width={1000}
-						height={1000}
-						mapData={mapData}
-						zoomType="scale"
-						zoomTransform={zoomTransform}
-						x={0}
-						y={0}
-						schools={schools}
-					/> : null}
+					<div>
+						<h1 className={classes.title}>
+							Total &middot; {schools.elementary ? schools.elementary.length + schools.middle.length +
+								schools.high.length : ` ... `}  Schools
+						</h1>
+						<CountryMap
+							checked={checked}
+							width={1000}
+							height={1000}
+							mapData={mapData}
+							zoomType="scale"
+							zoomTransform={zoomTransform}
+							x={0}
+							y={0}
+							schools={schools}
+							handleChange={this.handleChange}
+						/>
+					</div> : null}
 			</div>
 		)
 	}
 }
 
 
-export default ConvenienceStorePlaceGeography
+export default withStyles(styles)(SchoolPlaceGeography)
+
+

@@ -24,7 +24,7 @@ export default [
 		githubURL: 'http://github.com/sujinleeme/'
 	},
 	{
-		title: '2017 My Running Calendar',
+		title: 'My Running Calendar (2017)',
 		postURL: '04',
 		chartType: 'heat map',
 		source: 'strava api',
@@ -32,11 +32,11 @@ export default [
 		githubURL: 'https://github.com/sujinleeme'
 	},
 	{
-		title: 'Elementary and secondary School Place in Korea',
+		title: 'Elementary and secondary Schools in Korea (2017)',
 		postURL: '05',
-		chartType: 'Geography',
+		chartType: 'dot distribution map',
 		source: 'data.go.kr',
-		sourceURL: 'https://www.data.go.kr/dataset/15012890/standard.do?lang=en',
+		sourceURL: 'https://www.data.go.kr/dataset/15021148/standard.do?lang=en',
 		githubURL: 'https://github.com/sujinleeme'
 	}
 ]

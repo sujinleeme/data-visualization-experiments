@@ -1,12 +1,19 @@
-import { createMuiTheme } from 'material-ui/styles'
-import { lightBlue, green } from 'material-ui/colors'
+import {createMuiTheme} from 'material-ui/styles'
 
 const CustomTheme = createMuiTheme({
-  MuiAppBar: {
-    root: {
-      boxShadow: '0'
-    },
-  },
+	typography: {
+		fontFamily: 'DDINRegular',
+		body1: {
+			fontWeight: 700,
+			fontSize: '10px'
+		}
+	},
+	
+	MuiAppBar: {
+		root: {
+			boxShadow: '0'
+		}
+	}
 })
 
 export default CustomTheme
