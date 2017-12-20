@@ -4,22 +4,11 @@ import * as d3 from 'd3'
 export default class IntroCanvas extends React.Component {
 	constructor(props) {
 		super(props)
-		
-		// this.state = {
-		// 	// zoomTransform: null
-		// }
-		//
+
 		this.simulation = d3.forceSimulation()
 			.force("link", d3.forceLink().id((d) => d.id).distance(30))
 			.force("charge", d3.forceManyBody().strength(-60))
 			.nodes([{}])
-		// 	.force("link", d3.forceLink().id((d) => d.id).distance(250))
-		// 	.force("charge", d3.forceManyBody().strength(-200))
-		// 	.force("center", d3.forceCenter(this.props.width / 2, this.props.height / 2))
-		// 	.force('collision', d3.forceCollide().radius((d) => d.r + 30).iterations(16))
-		// 	.nodes(this.props.nodes)
-		//
-		// this.simulation.force("link").links()
 	}
 	
 	componentDidMount() {
@@ -38,16 +27,8 @@ export default class IntroCanvas extends React.Component {
 			cursor.attr("transform", "translate(" + d3.mouse(this) + ")");
 		}
 		
-		//
-		// var cursor = svg.append("circle")
-		// 	.attr("r", 30)
-		// 	.attr("transform", "translate(-100,-100)")
-		// 	.attr("class", "cursor");
-		//
-		// // restart();
 		
-		
-		var cursor = svg.append("circle")
+		const cursor = svg.append("circle")
 			.attr("r", 30)
 			.attr("transform", "translate(-100,-100)")
 			.attr("fill", "#fff")

@@ -5,11 +5,17 @@ import ChartInfo from '../assests/ChartInfo'
 import Posts from '../../Posts'
 import Grid from 'material-ui/Grid'
 import SchoolPlaceGeography from '../charts/SchoolPlaceGeography/SchoolPlaceGeography'
+import SEO from './SEO'
 
 export default () => {
 	const post = Posts[4]
 	return (
 		<div>
+			<SEO
+				title={post.title | `Data Visualization Experiments`}
+				description="Sujin Lee"
+				url="/#/05"
+			/>
 			<BodyHeader
 				title={post.title}
 			/>

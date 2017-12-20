@@ -54,7 +54,7 @@ const BodyHeader = (props) => {
 					</Link>
 					<div>
 						<h1 className={classes.sitename}>
-							Sujin's data Visualization Experimentals
+							Sujin's Data Visualization Experiments
 						</h1>
 						<h1 className={classes.title}>
 							{title}
@@ -66,9 +66,5 @@ const BodyHeader = (props) => {
 	)
 }
 
-
-BodyHeader.propTypes = {
-	classes: PropTypes.object.isRequired,
-}
 
 export default withStyles(styles)(BodyHeader)

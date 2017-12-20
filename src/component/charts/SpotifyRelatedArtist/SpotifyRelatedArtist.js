@@ -57,7 +57,6 @@ class SpotifyRelatedArtist extends Component {
 							<h1 className={classes.title}>
 								Artists's Connections &middot; {links.length} </h1>
 						</div>
-						
 						<ChartCanvas
 							width={1200} height={1500} nodes={nodes} links={links}
 							zoomType="scale"

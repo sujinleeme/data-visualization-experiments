@@ -5,7 +5,7 @@ import Grid from 'material-ui/Grid'
 import Posts from '../../Posts'
 import BodyFooter from '../assests/BodyFooter'
 import IntroCanvas from '../assests/IntroCanvas'
-import Helmet from 'react-helmet'
+import SEO from './SEO'
 
 const styles = theme => ({
 	page: {
@@ -30,7 +30,11 @@ const styles = theme => ({
 		letterSpacing: '3px',
 		fontSize: '13px',
 		fontWeight: 'bold',
-		marginBottom: theme.spacing.unit / 2
+		marginBottom: theme.spacing.unit / 2,
+		transition: 'all .5s',
+		'&:hover': {
+			opacity: 0.5
+		}
 	},
 	subheading: {
 		color: '#fff',
@@ -49,7 +53,7 @@ const styles = theme => ({
 		fontSize: '21px',
 		textTransform: 'uppercase',
 		letterSpacing: '4px',
-		margin: '3px 0 3px 0'
+		margin: '3px 0 3px 0',
 	},
 	
 	subtitle: {
@@ -104,15 +108,10 @@ const Home = (props) => {
 	
 	return (
 		<div className={classes.page}>
-			<Helmet
-				title="Data Visualization Experimental"
-				meta={[
-					{"name": "description", "content": "Code and Design by Sujin Lee (2017)"},
-					{property: "og:type", content: "article"},
-					{property: "og:title", content: "Data Visualization Experimental | Sujin Lee"},
-					{property: "og:image", content: "http://example.com/article.jpg"},
-					{property: "og:url", content: "http://example.com/example"}
-				]}
+			<SEO
+				title="Data Visualization Experiments"
+				description="Code & Design by Sujin Lee"
+				url="/"
 			/>
 			<Grid className={classes.page}>
 				<Grid container className={classes.main} spacing={24}>
@@ -123,7 +122,7 @@ const Home = (props) => {
 					<Grid item xs={12} md={5}>
 						<div className={classes.main}>
 							<div className={classes.sitename}>
-								<h1 className={classes.title}>Data Visualization Experimentals </h1>
+								<h1 className={classes.title}>Data Visualization Experiments </h1>
 								<h2 className={classes.subtitle}>Built with React.js & d3.js</h2>
 							</div>
 							{postList}

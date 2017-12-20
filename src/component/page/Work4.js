@@ -5,11 +5,17 @@ import BodyFooter from '../assests/BodyFooter'
 import ChartInfo from '../assests/ChartInfo'
 import Posts from '../../Posts'
 import Grid from 'material-ui/Grid'
+import SEO from './SEO'
 
 export default () => {
 	const post = Posts[3]
 	return (
 		<div>
+			<SEO
+				title={post.title | `Data Visualization Experiments`}
+				description="Sujin Lee"
+				url="/#/04"
+			/>
 			<BodyHeader
 				title={post.title}
 			/>

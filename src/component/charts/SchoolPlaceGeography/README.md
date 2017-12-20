@@ -1,6 +1,6 @@
-# Convenience Store Place Geography in South Korea
+# Elementary and secondary Schools in Korea (2017)
 
-### Source
-* TopoJSON : [South Korean administrative Municipal-level division(대한민국 시군구 행정구역)](http://danielykim.me/visualizations/South_Korea_population_density/json/TL_SCCO_SIG_crs84-m2s-quantized1e3-topo.json) by [DANIEL KIM](https://danielykim.github.io/) (2016.02)
+* chart type: Dot Distribution Map
+* orignal source: [The whole country elementary and middle school location standard data (data.go.kr)](https://www.data.go.kr/dataset/15021148/standard.do?lang=en)
 
-* 
+

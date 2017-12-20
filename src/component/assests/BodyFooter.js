@@ -1,9 +1,7 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import {withStyles} from 'material-ui/styles'
-import {Link} from 'react-router-dom'
 import AppBar from 'material-ui/AppBar'
-import classNames from 'classnames/bind';
+import classNames from 'classnames/bind'
 
 const styles = theme => ({
 	bar: {
@@ -38,22 +36,26 @@ const styles = theme => ({
 		letterSpacing: '2px',
 		display: 'block',
 		opacity: 0.3,
-		textAlign: 'center'
+		textAlign: 'center',
 	},
+	social: {
+		opacity: 0.3,
+		transition: 'all .5s'
+	}
 })
 
 const BodyFooter = ({classes, theme}) => {
 	const socials = {
-		'website /': 'https://www.sujinlee.me',
-		' github /': 'https://github.com/sujinleeme',
-		' twitter /': 'https://twitter.com/sujinleeme',
-		' instagram /': 'https://www.instagram.com/sujinlee.me/',
+		'website': 'https://www.sujinlee.me',
+		' github': 'https://github.com/sujinleeme',
+		' twitter': 'https://twitter.com/sujinleeme',
+		' instagram': 'https://www.instagram.com/sujinlee.me/',
 		' facebook': 'https://www.facebook.com/sujinlee.me'
 	}
 	
 	const socialLinks = Object.keys(socials).map((key, i) => (
-		<a key={i} className="social" href={socials[key]} target="_blank">
-			{key}
+		<a key={i} href={socials[key]} target="_blank">
+			<span className="social">{key}</span><span> / </span>
 		</a>
 	))
 	
@@ -72,9 +74,5 @@ const BodyFooter = ({classes, theme}) => {
 	)
 }
 
-
-BodyFooter.propTypes = {
-	// classes: PropTypes.object.isRequired,
-}
 
 export default withStyles(styles)(BodyFooter)
