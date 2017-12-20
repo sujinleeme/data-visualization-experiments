@@ -12,7 +12,8 @@ This is the repository for my projects & assignments for [Prof. Junhwan Lee(hci+
 This project lives on [https://sujinleeme.github.io/data-visualization-experiments](https://sujinleeme.github.io/data-visualization-experiments).
 
 ## Setup
-Clone this repo to your desktop and run `npm install` to install all the dependencies.
+* Clone this repo to your desktop and run `npm install` or `yarn install` to install all the dependencies. 
+* To run server, `npm start` or `yarn start` and open up [http://localhost:3000/](http://localhost:3000/).
 
 
 
