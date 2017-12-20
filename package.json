@@ -1,5 +1,5 @@
 {
-  "name": "data-visualization-experimentals",
+  "name": "data-visualization-experiments",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,6 +17,7 @@
     "qs": "^6.5.1",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-helmet": "^5.2.0",
     "react-native": "^0.48.3",
     "react-redux": "^5.0.6",
     "react-router": "^4.2.0",
@@ -31,7 +32,7 @@
     "strava-v3": "^1.14.0",
     "topojson": "^3.0.2"
   },
-  "homepage": "https://sujinleeme.github.io/data-visualization-experimentals",
+  "homepage": "https://sujinleeme.github.io/data-visualization-experiments",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
