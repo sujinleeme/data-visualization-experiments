@@ -1,38 +1,37 @@
-import React, { Component } from 'react'
-import {withStyles} from 'material-ui/styles'
-import DataSet from './DataSet'
-import {palette} from '../../../style/Palette'
-import SortSelection from './SortSelection'
+import React, {Component} from "react"
+import {withStyles} from "material-ui/styles"
+import DataSet from "./DataSet"
+import {palette} from "../../../style/Palette"
+import SortSelection from "./SortSelection"
 
 import {
 	BarChart, ReferenceLine, Bar, XAxis, YAxis, Cell, Tooltip,
 	ResponsiveContainer,
-	Label,
-} from 'recharts'
-
+	Label
+} from "recharts"
 
 const styles = theme => ({
 	chart: {
-		marginBottom: theme.spacing.unit * 6,
+		marginBottom: theme.spacing.unit * 6
 	},
 	root: {
-		top: '20px',
+		top: "20px"
 	},
 	hide: {
-		display: 'none',
+		display: "none"
 	},
 	label: {
-		zIndex: '9',
+		zIndex: "9"
 	},
 	sortOption: {
-		float: 'right',
+		float: "right"
 	},
 	axis: {
-		fontSize: '10px !important',
+		fontSize: "10px !important"
 	}
 })
 
-const yearList = ['2013', '2014', '2015', '2016']
+const yearList = ["2013", "2014", "2015", "2016"]
 
 class SocialExpenditureGraph extends Component {
 	constructor(props) {
@@ -41,9 +40,9 @@ class SocialExpenditureGraph extends Component {
 			initData: [],
 			filterData: [],
 			ocedData: [],
-			currentYear: '2013',
+			currentYear: "2013",
 			yearIndex: 1,
-			sortType: 3,
+			sortType: 3
 		}
 		
 		this.selectYear = this.selectYear.bind(this)
@@ -58,16 +57,15 @@ class SocialExpenditureGraph extends Component {
 	}
 	
 	initDataSet() {
-		const year = this.state.currentYear
 		const average = DataSet.filter(item =>
-			item.country === 'OECD',
+			item.country === "OECD"
 		)[0]
 		const notIncludeAverage = DataSet.filter(item =>
-			item !== average,
+			item !== average
 		)
 		this.setState({initData: notIncludeAverage, ocedData: average})
 		return new Promise((res) => {
-			res('Success Fetch InitData')
+			res("Success Fetch InitData")
 		})
 	}
 	
@@ -107,7 +105,7 @@ class SocialExpenditureGraph extends Component {
 	
 	selectYear(e) {
 		let year = e.target.innerHTML
-		if (e.target.tagName !== 'SPAN') {
+		if (e.target.tagName !== "SPAN") {
 			year = e.target.childNodes[0].innerHTML
 		}
 		this.setState({currentYear: year})
@@ -121,10 +119,10 @@ class SocialExpenditureGraph extends Component {
 		return (
 			<div className={classes.chart}>
 				<SortSelection
-				               sortTypeVal={sortType}
-				               yearIndex={yearIndex}
-				               handleChange={this.selectSortType}
-				               handleYearChange={this.selectYearIndex}
+					sortTypeVal={sortType}
+					yearIndex={yearIndex}
+					handleChange={this.selectSortType}
+					handleYearChange={this.selectYearIndex}
 				/>
 				<ResponsiveContainer className={classes.charts}
 				                     width="100%" height={1200}>
@@ -135,15 +133,15 @@ class SocialExpenditureGraph extends Component {
 						className={classes.root}
 					>
 						<XAxis padding={{left: 10}} tickFormatter={(value) => `${value}%`}
-						       tick={{fontSize: '13px', padding: '12px', color: palette.darkgrey}} type="number">
+						       tick={{fontSize: "13px", padding: "12px", color: palette.darkgrey}} type="number">
 						</XAxis>
 						
-						<YAxis padding={{bottom: 10, left: 10}} tick={{fontSize: '13px', color: palette.darkgrey}}
+						<YAxis padding={{bottom: 10, left: 10}} tick={{fontSize: "13px", color: palette.darkgrey}}
 						       type="category" dataKey="country"/>
 						<Tooltip cursor={{fillOpacity: 0.3}}
-						         itemStyle={{fontSize: '13px', color: palette.pink}}/>
+						         itemStyle={{fontSize: "13px", color: palette.pink}}/>
 						<Bar dataKey={currentYear}
-						     label={{fill: palette.darkgrey, fontSize: 10, position: 'right'}}
+						     label={{fill: palette.darkgrey, fontSize: 10, position: "right"}}
 						     unit="%"
 						>
 							{filterData.map((entry, index) => {

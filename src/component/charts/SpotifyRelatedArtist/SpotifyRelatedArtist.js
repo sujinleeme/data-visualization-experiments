@@ -1,22 +1,22 @@
-import React, { Component } from 'react'
-import * as d3 from 'd3'
-import ChartCanvas from './ChartCanvas'
-import { withStyles } from 'material-ui/styles'
+import React, {Component} from "react"
+import * as d3 from "d3"
+import ChartCanvas from "./ChartCanvas"
+import {withStyles} from "material-ui/styles"
 
 const styles = theme => ({
 	info: {
-		paddingBottom: theme.spacing.unit * 6,
+		paddingBottom: theme.spacing.unit * 6
 	},
 	
 	title: {
 		color: "#182026",
-		fontSize: '13px',
-		textTransform: 'uppercase',
-		letterSpacing: '2px',
-		display: 'block',
+		fontSize: "13px",
+		textTransform: "uppercase",
+		letterSpacing: "2px",
+		display: "block",
 		opacity: 0.9,
-		textAlign: 'center',
-		marginTop: '10px',
+		textAlign: "center",
+		marginTop: "10px"
 	}
 })
 
@@ -25,16 +25,14 @@ class SpotifyRelatedArtist extends Component {
 		super()
 		this.state = {
 			nodes: [],
-			links: [],
+			links: []
 		}
-		
 	}
-	
 	
 	componentWillMount() {
 		d3.queue()
-			.defer(d3.json, 'data/spotifyBTS/artistNodes.json')
-			.defer(d3.json, 'data/spotifyBTS/artistLinks.json')
+			.defer(d3.json, "data/spotifyBTS/artistNodes.json")
+			.defer(d3.json, "data/spotifyBTS/artistLinks.json")
 			.await((error, nodes, links) => {
 				this.setState({
 					nodes,
@@ -45,7 +43,7 @@ class SpotifyRelatedArtist extends Component {
 	
 	render() {
 		const {nodes, links} = this.state
-		const { classes } = this.props
+		const {classes} = this.props
 		
 		return (
 			<div>
@@ -67,7 +65,5 @@ class SpotifyRelatedArtist extends Component {
 		)
 	}
 }
-
-
 
 export default withStyles(styles)(SpotifyRelatedArtist)

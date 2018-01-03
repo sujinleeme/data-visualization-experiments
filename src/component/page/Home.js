@@ -136,15 +136,10 @@ const Home = (props) => {
 								{postList}
 							</div>
 						</Grid>
-					
 					</Grid>
 					<BodyFooter/>
-				
 				</Grid>
-			
 			</div>
-		
-		
 		</div>
 	
 	)

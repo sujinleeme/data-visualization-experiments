@@ -64,7 +64,7 @@ export default class ChartCanvas extends React.Component {
 		const {currentYear, totalDays, newYearDay} = this.state
 		const props = this.props
 		const parseData = Utils.getAllRecordsDates(props.data)
-		const years = Array.from(new Set(parseData.map((v) => v.year))).sort()
+		// const years = Array.from(new Set(parseData.map((v) => v.year))).sort()
 		// later new year! const yearRange = d3.range(years)
 		
 		const distancesVariance = Utils.getAllDistance(props.data)

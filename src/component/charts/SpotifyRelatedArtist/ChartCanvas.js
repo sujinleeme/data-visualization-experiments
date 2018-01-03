@@ -1,10 +1,9 @@
-import React, {PropTypes} from 'react'
-import * as d3 from 'd3'
-import Nodes from './Nodes'
-import Links from './Links'
-import Labels from './Labels'
-import Legend from './Legend'
-
+import React from "react"
+import * as d3 from "d3"
+import Nodes from "./Nodes"
+import Links from "./Links"
+import Labels from "./Labels"
+import Legend from "./Legend"
 
 export default class ChartCanvas extends React.Component {
 	constructor(props) {
@@ -16,7 +15,7 @@ export default class ChartCanvas extends React.Component {
 			.force("link", d3.forceLink().id((d) => d.id))
 			.force("charge", d3.forceManyBody().strength(-1000))
 			.force("center", d3.forceCenter(this.props.width / 2, this.props.height / 2))
-			.force('collide', d3.forceCollide().radius((d) => d.radius).strength((d) => -1 * d.radius))
+			.force("collide", d3.forceCollide().radius((d) => d.radius).strength((d) => -1 * d.radius))
 		
 		this.simulation.force("link").links(this.props.links)
 	}
@@ -47,12 +46,8 @@ export default class ChartCanvas extends React.Component {
 		}
 	}
 	
-	componentDidUpdate() {
-	
-	}
-	
 	componentWillUnmount() {
-		this.simulation.stop();
+		this.simulation.stop()
 	}
 	
 	render() {
