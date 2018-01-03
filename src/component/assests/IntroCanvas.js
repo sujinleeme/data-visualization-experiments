@@ -1,10 +1,10 @@
-import React from 'react'
-import * as d3 from 'd3'
+import React from "react"
+import * as d3 from "d3"
 
 export default class IntroCanvas extends React.Component {
 	constructor(props) {
 		super(props)
-
+		
 		this.simulation = d3.forceSimulation()
 			.force("link", d3.forceLink().id((d) => d.id).distance(30))
 			.force("charge", d3.forceManyBody().strength(-60))
@@ -16,66 +16,73 @@ export default class IntroCanvas extends React.Component {
 		const nodes = this.simulation.force("node")
 		const links = this.simulation.force("link")
 		
-		
 		const node = d3.selectAll(".node")
 		const link = d3.selectAll(".link")
 		const svg = d3.select(".introCanvas").on("mousemove", mousemove)
 		
-		
-		
 		function mousemove() {
-			cursor.attr("transform", "translate(" + d3.mouse(this) + ")");
+			cursor.attr("transform", "translate(" + d3.mouse(this) + ")")
 		}
-		
 		
 		const cursor = svg.append("circle")
 			.attr("r", 30)
 			.attr("transform", "translate(-100,-100)")
 			.attr("fill", "#fff")
-			.attr("class", "cursor");
+			.attr("class", "cursor")
 		
-		this.simulation.on("tick", tick);
-		//
+		this.simulation.on("tick", tick)
+		
 		function tick() {
-			link.attr("x1", function(d) { return d.source.x; })
-				.attr("y1", function(d) { return d.source.y; })
-				.attr("x2", function(d) { return d.target.x; })
-				.attr("y2", function(d) { return d.target.y; });
-
-			node.attr("cx", function(d) { return d.x; })
-				.attr("cy", function(d) { return d.y; });
+			link.attr("x1", function (d) {
+					return d.source.x
+				})
+				.attr("y1", function (d) {
+					return d.source.y
+				})
+				.attr("x2", function (d) {
+					return d.target.x
+				})
+				.attr("y2", function (d) {
+					return d.target.y
+				})
+			
+			node.attr("cx", function (d) {
+					return d.x
+				})
+				.attr("cy", function (d) {
+					return d.y
+				})
 		}
 		
-		
 		function restart() {
-			const node = node.data(nodes);
+			const node = node.data(nodes)
 			
 			node.enter().insert("circle", ".cursor")
 				.attr("class", "node")
 				.attr("r", 5)
-				.on("mousedown", mousedownNode);
+				.on("mousedown", mousedownNode)
 			
 			node.exit()
-				.remove();
+				.remove()
 			
-			const link = link.data(links);
+			const link = link.data(links)
 			
 			link.enter().insert(".line", ".node")
-				.attr("class", "link");
+				.attr("class", "link")
 			link.exit()
-				.remove();
+				.remove()
 			
-			this.simulation.start();
+			this.simulation.start()
 		}
 		
 		function mousedownNode(d, i) {
-			nodes.splice(i, 1);
-			const links = links.filter(function(l) {
-				return l.source !== d && l.target !== d;
-			});
-			d3.event.stopPropagation();
+			nodes.splice(i, 1)
+			const links = links.filter(function (l) {
+				return l.source !== d && l.target !== d
+			})
+			d3.event.stopPropagation()
 			
-			restart();
+			restart()
 		}
 		
 		//
@@ -161,8 +168,8 @@ export default class IntroCanvas extends React.Component {
 		const {width, height, links, nodes} = this.props
 		return (
 			<svg className="introCanvas" width="100%" height="100%">
-				<circle cy="50%" cx="50%" className="cursor" fill="#fff" r={7} />
-				
+				<circle cy="50%" cx="50%" className="cursor" fill="#fff" r={7}/>
+			
 			</svg>
 		)
 	}

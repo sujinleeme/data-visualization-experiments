@@ -1,35 +1,35 @@
-import React from 'react'
-import {withStyles} from 'material-ui/styles'
-import Toolbar from 'material-ui/Toolbar'
+import React from "react"
+import {withStyles} from "material-ui/styles"
+import Toolbar from "material-ui/Toolbar"
 
 const styles = theme => ({
 		bar: {
-			top: '0',
-			background: '#F7F7F9',
-			boxShadow: 'none',
+			top: "0",
+			background: "#F7F7F9",
+			boxShadow: "none",
 			paddingTop: theme.spacing.unit * 6,
-			paddingBottom: theme.spacing.unit * 6,
+			paddingBottom: theme.spacing.unit * 6
 		},
 		container: {
-			marginLeft: '80px',
-			maxWidth: '50%',
-			paddingBottom: theme.spacing.unit * 6,
+			marginLeft: "80px",
+			maxWidth: "50%",
+			paddingBottom: theme.spacing.unit * 6
 		},
 		
 		info: {
 			color: "#182026",
-			fontSize: '11px',
-			fontWeight: 'bold',
-			textTransform: 'uppercase',
-			letterSpacing: '2px',
-			display: 'block',
+			fontSize: "11px",
+			fontWeight: "bold",
+			textTransform: "uppercase",
+			letterSpacing: "2px",
+			display: "block",
 			opacity: 0.5,
-			textAlign: 'left',
-			marginTop: '10px',
+			textAlign: "left",
+			marginTop: "10px"
 		},
 		
 		sourcelink: {
-			borderBottom: '1px dotted #182026'
+			borderBottom: "1px dotted #182026"
 		}
 	}
 )
@@ -52,6 +52,5 @@ const ChartInfo = (props) => {
 		</Toolbar>
 	)
 }
-
 
 export default withStyles(styles)(ChartInfo)

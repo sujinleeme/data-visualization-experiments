@@ -141,20 +141,20 @@ class SocialExpenditureGraph extends Component {
 						<YAxis padding={{bottom: 10, left: 10}} tick={{fontSize: '13px', color: palette.darkgrey}}
 						       type="category" dataKey="country"/>
 						<Tooltip cursor={{fillOpacity: 0.3}}
-						         itemStyle={{fontSize: '13px', color: palette.green}}/>
+						         itemStyle={{fontSize: '13px', color: palette.pink}}/>
 						<Bar dataKey={currentYear}
 						     label={{fill: palette.darkgrey, fontSize: 10, position: 'right'}}
 						     unit="%"
 						>
 							{filterData.map((entry, index) => {
 								const color = entry[currentYear] > (averageData)
-									? palette.green
-									: palette.lightgreen
+									? palette.pink
+									: palette.lightpink
 								return <Cell key={index} fill={color}/>
 							})}
 						</Bar>
 						<ReferenceLine x={averageData} strokeDasharray="2 2"
-						               stroke={palette.darkgreen}>
+						               stroke={palette.yellow}>
 							<Label position="top">
 								{`OECD - ${averageData}(%)`}
 							</Label>

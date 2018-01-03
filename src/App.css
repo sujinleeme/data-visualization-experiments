@@ -61,12 +61,14 @@ svg, text {
     -ms-transition: all .5s ease-in-out;
     -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out;
+    opacity: 0.6;
+
 }
 
 .logo circle:hover {
-    fill: 0.3
-}
+    opacity: 1;
 
+}
 .social:hover {
     border-bottom: 1px dotted #182026
 }

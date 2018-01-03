@@ -1,95 +1,105 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
-import {withStyles} from 'material-ui/styles'
-import Grid from 'material-ui/Grid'
-import Posts from '../../Posts'
-import BodyFooter from '../assests/BodyFooter'
-import IntroCanvas from '../assests/IntroCanvas'
-import SEO from './SEO'
+import React from "react"
+import {Link} from "react-router-dom"
+import {withStyles} from "material-ui/styles"
+import Grid from "material-ui/Grid"
+import Posts from "../../Posts"
+import BodyFooter from "../assests/BodyFooter"
+import SEO from "./SEO"
+
+// const backgroundImage = require(`../images/background.jpg`)
+// 	return <div style={{ backgroundImage: `url(${imageUrl})` }} />
+// }
 
 const styles = theme => ({
 	page: {
-		background: '#182026',
-		width: '100vw',
-		height: '100vh',
-		overflow: 'hidden',
+		backgroundImage: `url(${process.env.PUBLIC_URL + "/background.jpg"})`,
+		backgroundPosition: "center center",
+		backgroundRepeat: "no-repeat",
+		backgroundAttachment: "fixed",
+		backgroundSize: "cover",
+		width: "100vw",
+		height: "100vh",
+		overflow: "hidden",
+		opacity: 1
+	},
+	introduction: {
+		background: "black",
+		padding: theme.spacing.unit * 6
 	},
 	main: {
-		position: 'relative',
-		top: '50%',
-		transform: 'translateY(-50%)',
-		padding: theme.spacing.unit
+		position: "relative",
+		top: "50%",
+		transform: "translateY(-50%)"
 	},
 	sitename: {
 		marginBottom: theme.spacing.unit * 6
 	},
 	heading: {
-		color: '#fff',
-		opacity: '0.8',
-		textTransform: 'uppercase',
-		letterSpacing: '3px',
-		fontSize: '13px',
-		fontWeight: 'bold',
+		color: "#fff",
+		opacity: "0.8",
+		textTransform: "uppercase",
+		letterSpacing: "3px",
+		fontSize: "13px",
+		fontWeight: "bold",
 		marginBottom: theme.spacing.unit / 2,
-		transition: 'all .5s',
-		'&:hover': {
+		transition: "all .5s",
+		"&:hover": {
 			opacity: 0.5
 		}
 	},
 	subheading: {
-		color: '#fff',
-		opacity: '0.3',
-		textTransform: 'uppercase',
-		letterSpacing: '3px',
-		fontSize: '11px',
-		fontWeight: 'bold',
+		color: "#fff",
+		opacity: "0.3",
+		textTransform: "uppercase",
+		letterSpacing: "3px",
+		fontSize: "11px",
+		fontWeight: "bold"
 	},
 	
 	title: {
-		display: 'block',
-		fontFamily: 'DDINRegular',
+		display: "block",
+		fontFamily: "DDINRegular",
 		color: "#fff",
-		fontWeight: 'bold',
-		fontSize: '21px',
-		textTransform: 'uppercase',
-		letterSpacing: '4px',
-		margin: '3px 0 3px 0',
+		fontWeight: "bold",
+		fontSize: "21px",
+		textTransform: "uppercase",
+		letterSpacing: "4px",
+		margin: "3px 0 3px 0"
 	},
 	
 	subtitle: {
-		fontFamily: 'DDINRegular',
+		fontFamily: "DDINRegular",
 		color: "#fff",
-		fontSize: '13px',
-		fontWeight: 'bold',
-		textTransform: 'uppercase',
-		letterSpacing: '2px',
-		display: 'block',
-		textAlign: 'left',
+		fontSize: "13px",
+		fontWeight: "bold",
+		textTransform: "uppercase",
+		letterSpacing: "2px",
+		display: "block",
+		textAlign: "left",
 		opacity: 0.5
 	},
 	copyright: {
-		fontFamily: 'DDINRegular',
+		fontFamily: "DDINRegular",
 		color: "#fff",
-		fontSize: '10px',
-		fontWeight: 'bold',
-		textTransform: 'uppercase',
-		letterSpacing: '2px',
-		display: 'block',
-		textAlign: 'left',
+		fontSize: "10px",
+		fontWeight: "bold",
+		textTransform: "uppercase",
+		letterSpacing: "2px",
+		display: "block",
+		textAlign: "left",
 		opacity: 0.5
 	},
 	posts: {
-		display: 'flex',
-		marginBottom: theme.spacing.unit * 2,
+		display: "flex",
+		marginBottom: theme.spacing.unit * 2
 	},
 	number: {
-		display: 'inline-flex',
-		alignItems: 'center',
+		display: "inline-flex",
+		alignItems: "center",
 		opacity: 0.5,
-		marginRight: theme.spacing.unit * 4,
+		marginRight: theme.spacing.unit * 4
 	}
 })
-
 
 const Home = (props) => {
 	const {classes} = props
@@ -105,7 +115,6 @@ const Home = (props) => {
 		</div>
 	))
 	
-	
 	return (
 		<div className={classes.page}>
 			<SEO
@@ -113,31 +122,32 @@ const Home = (props) => {
 				description="Code & Design by Sujin Lee"
 				url="/"
 			/>
-			<Grid className={classes.page}>
-				<Grid container className={classes.main} spacing={24}>
-					<Grid item md={1}/>
-					<Grid item xs={12} md={5}>
-						<IntroCanvas/>
-					</Grid>
-					<Grid item xs={12} md={5}>
-						<div className={classes.main}>
-							<div className={classes.sitename}>
-								<h1 className={classes.title}>Data Visualization Experiments </h1>
-								<h2 className={classes.subtitle}>Built with React.js & d3.js</h2>
+			<div>
+				<Grid className={classes.page}>
+					<Grid container className={classes.main} spacing={24}>
+						<Grid item md={1}/>
+						<Grid item xs={12} md={5}/>
+						<Grid item xs={12} md={6}>
+							<div className={classes.introduction}>
+								<div className={classes.sitename}>
+									<h1 className={classes.title}>SUJIN'S Data Visualization Experiments </h1>
+									<h2 className={classes.subtitle}>Built with React.js & d3.js</h2>
+								</div>
+								{postList}
 							</div>
-							{postList}
-						</div>
+						</Grid>
+					
 					</Grid>
-					<Grid item md={1}/>
+					<BodyFooter/>
+				
 				</Grid>
-			</Grid>
-			<BodyFooter
-				theme="dark"
-			/>
+			
+			</div>
+		
+		
 		</div>
 	
 	)
 }
-
 
 export default withStyles(styles)(Home)
