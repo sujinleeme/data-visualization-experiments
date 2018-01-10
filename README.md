@@ -8,6 +8,13 @@ This is the repository for my projects & assignments for [Prof. Junhwan Lee(hci+
 *  [My Running Calendar - Strava (2017)](https://sujinleeme.github.io/data-visualization-experiments/#/04)
 *  [Elementary and secondary Schools in Korea (2017)](https://sujinleeme.github.io/data-visualization-experiments/#/05)
 
+## Gallery
+![OECD Social Expenditure (2013-2016](gallery/1.gif)
+![Changes in Road Traffic Accidents, Casualties and Fatalities](gallery/2.gif)
+![BTS(방탄소년단)'s Spotify Artist Social Network](gallery/3.gif)
+![My Running Calendar - Strava (2017)](gallery/4.gif)
+![Elementary and secondary Schools in Korea (2017)](gallery/5.gif)
+
 ## Live
 This project lives on [https://sujinleeme.github.io/data-visualization-experiments](https://sujinleeme.github.io/data-visualization-experiments).
 
