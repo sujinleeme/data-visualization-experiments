@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import * as d3 from "d3"
 import ChartCanvas from "./ChartCanvas"
 import {withStyles} from "material-ui/styles"
-
+import LoadingCircle from "../../assests/LoadingCircle"
 const styles = theme => ({
 	info: {
 		paddingBottom: theme.spacing.unit * 6
@@ -60,7 +60,7 @@ class SpotifyRelatedArtist extends Component {
 							zoomType="scale"
 						/>
 					</div>
-					: null}
+					: <LoadingCircle />}
 			</div>
 		)
 	}

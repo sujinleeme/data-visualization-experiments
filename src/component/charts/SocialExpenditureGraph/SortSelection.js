@@ -1,38 +1,35 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { withStyles } from 'material-ui/styles'
-import Input, { InputLabel } from 'material-ui/Input'
-import classNames from 'classnames'
-
-import { MenuItem } from 'material-ui/Menu'
-import { FormControl } from 'material-ui/Form'
-import Select from 'material-ui/Select'
+import React from "react"
+import {withStyles} from "material-ui/styles"
+import {InputLabel} from "material-ui/Input"
+import {MenuItem} from "material-ui/Menu"
+import {FormControl} from "material-ui/Form"
+import Select from "material-ui/Select"
 
 const styles = theme => ({
   root: {
-    background: '#F7F7F9'
+    background: "#F7F7F9"
   },
   formControl: {
     margin: theme.spacing.unit,
-    minWidth: 120,
+    minWidth: 120
   },
   selectEmpty: {
-    marginTop: theme.spacing.unit * 2,
+    marginTop: theme.spacing.unit * 2
   },
   colorPrimary: {
-    color: '#0efda6',
+    color: "#0efda6"
   },
   selectors: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    marginTop: '25px'
+    display: "flex",
+    justifyContent: "space-between",
+    marginTop: "25px"
   }
 })
 
 class SortSelection extends React.Component {
   
-  render () {
-    const {classes, handleChange, handleYearChange, sortTypeVal, yearIndex, error, caps, ...inputProps} = this.props
+  render() {
+    const {classes, handleChange, handleYearChange, sortTypeVal, yearIndex} = this.props
     return (
       <div className={classes.selectors}>
         <form className={classes.container} autoComplete="off">
@@ -43,7 +40,7 @@ class SortSelection extends React.Component {
               htmlFor="">Filter</InputLabel>
             <Select
               value={sortTypeVal}
-              onChange={handleChange('sortType')}
+              onChange={handleChange("sortType")}
             >
               <MenuItem className={classes.root} value={1}>Lowest</MenuItem>
               <MenuItem value={2}>Highest</MenuItem>
@@ -71,10 +68,6 @@ class SortSelection extends React.Component {
     
     )
   }
-}
-
-SortSelection.propTypes = {
-  classes: PropTypes.object.isRequired,
 }
 
 export default withStyles(styles)(SortSelection)
